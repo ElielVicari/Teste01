@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from const import WIN_WIDTH, ENTITY_SPEED
-from entity import Entity
+from Code.entity import Entity
 
 
 class Background(Entity):

@@ -5,14 +5,14 @@ from dis import name
 import pygame
 
 from Code.level import Level
-from const import WIN_WIDTH, WIN_HEIGTH, MENU_OPTION
+from const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
 from Code.menu import Menu
 
 
 class Game:
     def __init__(self):
         pygame.init()
-        self.window = pygame.display.set_mode(size=(WIN_WIDTH,WIN_HEIGTH))
+        self.window = pygame.display.set_mode(size=(WIN_WIDTH,WIN_HEIGHT))
 
     def run(self):
         while True:
