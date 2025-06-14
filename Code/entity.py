@@ -6,10 +6,11 @@ import pygame
 
 
 class Entity(ABC):
-    def __init__(self, name: str, position: tuple):
+    def __init__(self, name: str, position: tuple[int, int]):
         self.name = name
-        self.surf = pygame.image.load('./Asset/' + name + '.png').convert_alpha()
-        self.rect = self.surf.get_rect(left=position[0], top=position[1])
+        self.surf = pygame.image.load(f'./Asset/{name}.png').convert_alpha()
+        self.rect = self.surf.get_rect()
+        self.rect.topleft = position
         self.speed = 0
 
     @abstractmethod
