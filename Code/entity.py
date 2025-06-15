@@ -4,6 +4,8 @@ from abc import ABC, abstractmethod
 
 import pygame
 
+from const import ENTITY_HEALTH
+
 
 class Entity(ABC):
     def __init__(self, name: str, position: tuple[int, int]):
@@ -12,6 +14,7 @@ class Entity(ABC):
         self.rect = self.surf.get_rect()
         self.rect.topleft = position
         self.speed = 0
+        self.health = ENTITY_HEALTH[self.name]
 
     @abstractmethod
     def move(self, ):
