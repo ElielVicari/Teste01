@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import sys
 from dis import name
 
 import pygame
@@ -40,6 +41,8 @@ class Game:
                 quit()
             else:
                 pass
+                pygame.quit()
+                sys.exit()
 
 
 

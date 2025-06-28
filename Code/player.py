@@ -13,7 +13,7 @@ class Player(Entity):
         super().__init__(name, position)
         self.shot_delay = ENTITY_SHOT_DELAY[self.name]
 
-    def move(self,):
+    def move(self):
         pressed_key = pygame.key.get_pressed()
         if pressed_key[PLAYER_KEY_UP[self.name]] and self.rect.top > 0:
             self. rect.centery -= ENTITY_SPEED[self.name]
@@ -25,6 +25,7 @@ class Player(Entity):
             self. rect.centerx += ENTITY_SPEED[self.name]
         pass
 
+
     def shoot(self):
         self.shot_delay -= 1
         if self.shot_delay == 0:
@@ -33,3 +34,5 @@ class Player(Entity):
         pressed_key = pygame.key.get_pressed()
         if pressed_key[PLAYER_KEY_SHOOT[self.name]]:
             return PlayerShot(name=f'{self.name}Shot', position=(self.rect.centerx, self.rect.centery))
+        else:
+            return None
